@@ -6,7 +6,7 @@
 // ===============================================================================
 
 
-var tableArray = [
+var userArray = [
    { 
  	friendName: "Carlton",
  	photoLink: "http://s3.amazonaws.com/rapgenius/carltonbanks.jpg",
@@ -17,4 +17,4 @@ var tableArray = [
 ];
 
 // Note how we export the array. This makes it accessible to other files using require.
-module.exports = tableArray;
+module.exports = userArray;
