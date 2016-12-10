@@ -7,8 +7,8 @@
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -39,8 +39,7 @@
     <h4>Link to Photo Image (Required)</h4>
     <input type="text" name="" id="user_photo" class="form-control" required >
 
-    <hr>
-
+    <hr> 
     <h3><strong>Question 1</strong></h3>
     <h4>It helps to turn to people in times of need.</h4>
     <select data-placeholder="" class="chosen-select" id="q1">
@@ -238,6 +237,9 @@
             return formChecked;
             
           } 
+          
+          
+          
           if(checkForm() == true){  
           
             //Grab the user inputs and put into an object
@@ -245,7 +247,7 @@
               
               friendName: $('#user_name').val().trim(),
               photoLink: $('#user_photo').val().trim(),
-              selections: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
+              scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
             
             };
 
@@ -255,25 +257,21 @@
             var currentURL = window.location.origin;
 
           //AJAX post the data to Best Friends API  
-          $.post(currentURL + "/api/tables", userData, function(data){
+          $.post(currentURL + "/api/users", newUser, function(data){
+            
             // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-            $("#friendName").text(data.user_name);
-            $('#friendName').attr("src", data.user_photo)
+            $("#friendName").text(data.friendName);
+            $('#friendName').attr("src", data.photoLink)
             $("#photoLink").attr("width", '100%');
             $("#photoLink").attr("height", '100%'); 
 
-            //Show the 
+            
 
 
             });
           
           };
-          else{
 
-                alert("Fill all fields!");
-
-
-          }
       
           return false;
 
