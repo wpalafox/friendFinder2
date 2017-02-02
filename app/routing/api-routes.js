@@ -36,9 +36,8 @@ module.exports = function(app) {
 
   //API post request to submit data user-data.js
   app.post("/api/users", function(req, res){
-      //Set of instructions to find the closest user
       
-          
+      //Set of instructions to find the closest user
           var min_compat=50;
           var index=0;
           
@@ -68,19 +67,11 @@ module.exports = function(app) {
 
 
        //find best match 
-
-         
-        //userData.push(req.body);
+          
+          //userData.push(req.body);
          //res.json(true);
-
-
-
-
-
-
-
-
-         //console.log(req.body);
+        
+        //console.log(req.body);
         //API post request to submit data into the friends.js 
 
 });

@@ -8,74 +8,59 @@
 
 var userArray = [
    { 
- 	friendName: "Carlton",
- 	photoLink: "http://s3.amazonaws.com/rapgenius/carltonbanks.jpg",
-    scores: ["4", "3", "1", "2", "4", "2", "2", "5", "4", "2"]
-   
+   	friendName: "Carlton Banks",
+   	photoLink: "http://s3.amazonaws.com/rapgenius/carltonbanks.jpg",
+      scores: ["4", "3", "1", "2", "4", "2", "2", "5", "4", "2"]
+     
    },   
    { 
- 	friendName: "Will",
+   	friendName: "Will Smith",
+   	photoLink: "http://s3.amazonaws.com/rapgenius/carltonbanks.jpg",
+      scores: ["4", "3", "1", "2", "4", "2", "2", "5", "4", "2"]
+   
+   }, 
+     { 
+   	friendName: "Philip Banks",
+   	photoLink: "http://s3.amazonaws.com/rapgenius/carltonbanks.jpg",
+      scores: ["4", "3", "1", "2", "4", "2", "2", "5", "4", "2"]
+   
+   }, 
+     { 
+   	friendName: "Vivian Banks",
+   	photoLink: "http://s3.amazonaws.com/rapgenius/carltonbanks.jpg",
+      scores: ["4", "3", "1", "2", "4", "2", "2", "5", "4", "2"]
+     
+   }, 
+     { 
+ 	friendName: "Hilary Banks",
  	photoLink: "http://s3.amazonaws.com/rapgenius/carltonbanks.jpg",
     scores: ["4", "3", "1", "2", "4", "2", "2", "5", "4", "2"]
    
    }, 
      { 
- 	friendName: "Uncle Phil",
+ 	friendName: "Ashley Banks",
  	photoLink: "http://s3.amazonaws.com/rapgenius/carltonbanks.jpg",
     scores: ["4", "3", "1", "2", "4", "2", "2", "5", "4", "2"]
    
    }, 
      { 
- 	friendName: "Venessa",
+ 	friendName: "Nicky Banks",
  	photoLink: "http://s3.amazonaws.com/rapgenius/carltonbanks.jpg",
     scores: ["4", "3", "1", "2", "4", "2", "2", "5", "4", "2"]
    
    }, 
      { 
- 	friendName: "Auntie",
+ 	friendName: "Geoffrey Barbara Butler",
  	photoLink: "http://s3.amazonaws.com/rapgenius/carltonbanks.jpg",
     scores: ["4", "3", "1", "2", "4", "2", "2", "5", "4", "2"]
    
    }, 
      { 
- 	friendName: "Jeffrey",
+ 	friendName: "Jazz",
  	photoLink: "http://s3.amazonaws.com/rapgenius/carltonbanks.jpg",
     scores: ["4", "3", "1", "2", "4", "2", "2", "5", "4", "2"]
    
-   }, 
-     { 
- 	friendName: "The Urban Guy",
- 	photoLink: "http://s3.amazonaws.com/rapgenius/carltonbanks.jpg",
-    scores: ["4", "3", "1", "2", "4", "2", "2", "5", "4", "2"]
-   
-   }, 
-     { 
- 	friendName: "Urkel",
- 	photoLink: "http://s3.amazonaws.com/rapgenius/carltonbanks.jpg",
-    scores: ["4", "3", "1", "2", "4", "2", "2", "5", "4", "2"]
-   
-   }, 
-     { 
- 	friendName: "Uncle Jesse",
- 	photoLink: "http://s3.amazonaws.com/rapgenius/carltonbanks.jpg",
-    scores: ["4", "3", "1", "2", "4", "2", "2", "5", "4", "2"]
-   
-   }, 
-	{ 
- 	friendName: "Bob Saget",
- 	photoLink: "http://s3.amazonaws.com/rapgenius/carltonbanks.jpg",
-    scores: ["4", "3", "1", "2", "4", "2", "2", "5", "4", "2"]
-   
-   }, 
-
-
-
-
-
-
-
-
-
+   }
 
 ];
 

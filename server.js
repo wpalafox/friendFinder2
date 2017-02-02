@@ -2,11 +2,9 @@
 // DEPENDENCIES
 // Series of npm packages that we will use to give our server useful functionality
 // ==============================================================================
-
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
-
 
 
 
@@ -44,12 +42,6 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 require("./app/routing/api-routes.js")(app);
 require("./app/routing/html-routes.js")(app);
-
-
-
-
-
-
 
 
 // ==============================================================================
