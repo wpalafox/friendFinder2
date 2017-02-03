@@ -6,10 +6,13 @@
 
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <!-- Font Awesome Styleshee -->
+  <!-- Font Awesome Stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -42,18 +45,18 @@
 
     <hr> 
     <h3><strong>Question 1</strong></h3>
-    <h4>It helps to turn to people in times of need.</h4>
+    <h4>How fresh are you? Don't lie!</h4>
     <select data-placeholder="" class="chosen-select" id="q1">
       <option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
+            <option value="1">1 (Barely)</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
+            <option value="5">5 (Super)</option>
         </select>
 
     <h3><strong>Question 2</strong></h3>
-    <h4>I usually discuss my problems and concerns with potential employers. </h4>
+    <h4>Would you consider youself a self-centered person?</h4>
     <select data-placeholder="" class="chosen-select" id="q2">
       <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -65,7 +68,7 @@
 
 
     <h3><strong>Question 3</strong></h3>
-    <h4>I talk things over with people I sit next to- while waiting at the DMV. </h4>
+    <h4>You often give motivation to those around you.</h4>
     <select data-placeholder="" class="chosen-select" id="q3">
       <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -77,7 +80,7 @@
 
 
     <h3><strong>Question 4</strong></h3>
-    <h4>I find it easy to depend on the morning-shift guy from Whataburger; he has never failed to understand my order. </h4>
+    <h4>Sometimes you want to live a devil-may-care lifestyle.</h4>
     <select data-placeholder="" class="chosen-select" id="q4">
       <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -89,7 +92,7 @@
 
 
     <h3><strong>Question 5</strong></h3>
-    <h4>I don't feel comfortable opening up to my closest family members. </h4>
+    <h4>Your viewpoints lean more conservative in political discussions.</h4>
     <select data-placeholder="" class="chosen-select" id="q5">
       <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -101,7 +104,7 @@
 
 
     <h3><strong>Question 6</strong></h3>
-    <h4>I prefer to show Hector how I feel deep down.  </h4>
+    <h4>You have a hilariously short temper and diabolical plans.</h4>
     <select data-placeholder="" class="chosen-select" id="q6">
       <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -113,7 +116,7 @@
 
 
     <h3><strong>Question 7</strong></h3>
-    <h4>I often worry if Tom Hanks really cares for me. </h4>
+    <h4>You're ambitious and career oriented.</h4>
     <select data-placeholder="" class="chosen-select" id="q7">
       <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -124,7 +127,7 @@
         </select>
 
     <h3><strong>Question 8</strong></h3>
-    <h4>I'm afraid the girl I saw once at HEB may abandon me.</h4>
+    <h4>You live to serve others, and enjoy doing it.</h4>
     <select data-placeholder="" class="chosen-select" id="q8">
       <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -135,7 +138,7 @@
         </select>
 
     <h3><strong>Question 9</strong></h3>
-    <h4>I worry that the Jimmy John's delivery guy won't care about me as much as I care about him.</h4>
+    <h4>You have already earned, or on your way to an advanced post-graduation degree</h4>
     <select data-placeholder="" class="chosen-select" id="q9">
       <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -146,7 +149,7 @@
         </select>
 
     <h3><strong>Question 10</strong></h3>
-    <h4>I'm always the first one to say I love you- to the police officer who pulled me over for driving 20 mph over.</h4>
+    <h4>You are or have been involved with a collection of bad influences, but your have at least one good relative to help you.</h4>
     <select data-placeholder="" class="chosen-select" id="q10">
       <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -210,80 +213,95 @@
 
     //verify the form
     //Checks if the user entered any information into the form
-    
-     // Check and Capture the form inputs 
+    // Check and Capture the form inputs 
     $("#submit").on("click", function(){
 
         function checkForm(){
           
           var formChecked = true;  
+            
             $('.form-control').each(function(){ 
-
                 if($(this).val() === "")
-                    
                     formChecked = false;
+                });
 
-              });
-
-
-          $('.chosen-select').each(function(){
-
+            $('.chosen-select').each(function(){
               if($(this).val() === "")
-                  
-                  formChecked = false;  
-
-
+                formChecked = false;  
               }); 
             
-            return formChecked;
+              return formChecked;
             
           } 
           
           
-          
+          //If the user filled in every field from 'form-control' to 'chosen-select' then we proceed to make the user object
           if(checkForm() == true){  
-          
             //Grab the user inputs and put into an object
             var newUser = {
-              
               friendName: $('#user_name').val().trim(),
               photoLink: $('#user_photo').val().trim(),
-              scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
-            
+              scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), 
+              $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
             };
 
+            //Displays the user object in the console for reference
             console.log(newUser);
 
            //Captures url of website 
             var currentURL = window.location.origin;
 
           //AJAX post the data to Best Friends API  
-          $.post(currentURL + "/api/users", newUser, function(data){
-            
-            // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-            $("#friendName").text(data.friendName);
-            $('#friendName').attr("src", data.photoLink)
-            $("#photoLink").attr("width", '100%');
-            $("#photoLink").attr("height", '100%'); 
+          console.log("right before ajax");
+          
+          $.ajax({
+            type: "POST",
+            url: currentURL + "/api/users",
+            data: newUser,
+            success: alert("ajax post successful!"),
+            dataType: String
+          });
+                    
+        }
+          else{
 
+              alert("Complete the survey player!");
+
+          }
+      
+          return false;
+      
+      });
+
+    /*
+      console.log(" in post function");
+              // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+              $('#friendName').text(data.friendName);
+              $('#friendName').attr("src", data.photoLink)
+              $('#photoLink').attr("width", '100%');
+              $('#photoLink').attr("height", '100%'); 
             
+
+         $.post(currentURL + "/api/users", newUser)
+            .done( function(data){
+            
+            
+
+            })
+            .fail(function(xhr, status, error){
+
+              console.log("ajax call failed");
 
 
             });
           
-          };
-
-      
-          return false;
-
-
-      });
 
 
 
-   
 
-</script>
+            */
+
+  </script>
 
 </body>
 </html>

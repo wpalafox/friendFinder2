@@ -29,56 +29,36 @@ module.exports = function(app) {
 
  
 
-
-  // ---------------------------------------------------------------------------
-
-
-
   //API post request to submit data user-data.js
   app.post("/api/users", function(req, res){
       
       //Set of instructions to find the closest user
-          var min_compat=50;
-          var index=0;
-          
-          for(i = 0; i < userData.length; i++){ 
-            
-            var sum = 0;
-            for(k = 0; k < 10; k++){
-
+         var selectionArray = [];
+            for(i = 0; i < userData.length; i++){ 
+              var sum = 0;
+              for(k = 0; k < 10; k++){
+                
                 sum += Math.abs(parseInt(req.body.scores[k])-parseInt(userData[i].scores[k]));
 
-            } 
-            
-            if(sum<min_compat){
-              min_compat=sum;
-              index=i;
+              } 
+              selectionArray.push(parseInt(sum));
+
+              console.log(selectionArray);
             }
 
-          }
+         //var min
+         
+          
 
-          console.log("person that is most compatible is "+i);
-          console.log(" compatability rating:"+(50-min_compat));
-
-
-       
-
-
-
-
-       //find best match 
+        //find best match 
           
           //userData.push(req.body);
          //res.json(true);
         
         //console.log(req.body);
-        //API post request to submit data into the friends.js 
-
-});
-
   
-
-
+         userData.push(req.body);
+  });
 
   // ---------------------------------------------------------------------------
   // I added this below code so you could clear out the table while working with the functionality.
