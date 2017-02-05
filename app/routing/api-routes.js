@@ -35,7 +35,7 @@ module.exports = function(app) {
         console.log("here");
       
       //Set of instructions to find the closest user
-         var selectionArray = [];
+         var differenceArray = [];
             for(i = 0; i < userData.length; i++){ 
               var sum = 0;
               for(k = 0; k < 10; k++){
@@ -43,22 +43,22 @@ module.exports = function(app) {
                 sum += Math.abs(parseInt(req.body.scores[k])-parseInt(userData[i].scores[k]));
 
               } 
-              selectionArray.push(parseInt(sum));
+              differenceArray.push(parseInt(sum));
 
               
             }
-         console.log(selectionArray);
+         console.log(differenceArray);
          
-         //var min difference
-         /*
-         var minDif = Math.min.apply(null, selectionArray);
-         var theSelection = selectionArray.indexOf(minDif);
+         var minDif = Math.min.apply(null, differenceArray);
+         
+         var theSelection = differenceArray.indexOf(minDif);
+         
+         console.log(userData[theSelection]);
          
          res.json(userData[theSelection]);
-
-          userData.push(req.body);
-          */
-          return true;
+         userData.push(req.body);
+        
+      //return true;
     });
 
   // ---------------------------------------------------------------------------

@@ -190,17 +190,16 @@
           <h2 class="modal-title"><strong>Best Friend</strong></h2>
         </div>
         <div class="modal-body">
-          <h2 id="#friendName"></h2>
-          <img id="#friendImg" src="#" alt="">
+          <h2 id="friendName"></h2>
+          <img id="friendImg" alt="">
         </div>
         <div class="modal-footer">
         </div>
       </div>
 
     </div>
-  </div>
+</div>
 
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
 
 
@@ -237,6 +236,8 @@
           
           //If the user filled in every field from 'form-control' to 'chosen-select' then we proceed to make the user object
           if(checkForm() == true){  
+            
+
             //Grab the user inputs and put into an object
             var newUser = {
               friendName: $('#user_name').val().trim(),
@@ -254,79 +255,47 @@
           //AJAX post the data to Best Friends API  
           console.log("right before ajax");
           
+           $.post(currentURL+"/api/users", newUser,function(){
+              
+              console.log("Success!");
+
           
-          $.post(currentURL+"/api/users", newUser,function(){
-              
 
-              console.log("You have been added to the database.");
+          }).done(function(data){
+              console.log(data.friendName);
+              console.log(data.photoLink);
 
-              
-              
-              
-          })
-          .done(function(data){
-            alert("goodie");
-            $("#friendName").text(data.friendName);
-              
-
+              $('#friendName').html(data.friendName);
               $('#friendImg').attr("src", data.photoLink);
-              $("#friendImg").attr("width", '100%');
-              $("#friendImg").attr("height", '100%');
+              $('#friendImg').attr("width", '100%');
+              $('#friendImg').attr("height", '100%');
+              
               // Show the modal with the best match 
               $("#resultsModal").modal('toggle');
-
-
-
-
-          })
-          .fail(function(err){
-            alert("you done fucked up");
-          })
-          .always(function(){
+           
+          }).fail(function(err){
+            alert("Check your api routes");
+          }).always(function(){
             alert("always");
           });
-        
-        
 
-
-        }
-          else{
+      
+  
+      }
+      
+      else{
 
               alert("Complete the survey player!");
 
           }
       
           return false;
+
+          
       
       });
 
-    /*
-      console.log(" in post function");
-              // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-              $('#friendName').text(data.friendName);
-              $('#friendName').attr("src", data.photoLink)
-              $('#photoLink').attr("width", '100%');
-              $('#photoLink').attr("height", '100%'); 
-            
-
-         $.post(currentURL + "/api/users", newUser)
-            .done( function(data){
-            
-            
-
-            })
-            .fail(function(xhr, status, error){
-
-              console.log("ajax call failed");
-
-
-            });
-          
-
-
-
-
-            */
+   
 
   </script>
 
