@@ -31,6 +31,8 @@ module.exports = function(app) {
 
   //API post request to submit data user-data.js
   app.post("/api/users", function(req, res){
+
+        console.log("here");
       
       //Set of instructions to find the closest user
          var selectionArray = [];
@@ -43,22 +45,21 @@ module.exports = function(app) {
               } 
               selectionArray.push(parseInt(sum));
 
-              console.log(selectionArray);
+              
             }
-
-         //var min
+         console.log(selectionArray);
          
-          
+         //var min difference
+         /*
+         var minDif = Math.min.apply(null, selectionArray);
+         var theSelection = selectionArray.indexOf(minDif);
+         
+         res.json(userData[theSelection]);
 
-        //find best match 
-          
-          //userData.push(req.body);
-         //res.json(true);
-        
-        //console.log(req.body);
-  
-         userData.push(req.body);
-  });
+          userData.push(req.body);
+          */
+          return true;
+    });
 
   // ---------------------------------------------------------------------------
   // I added this below code so you could clear out the table while working with the functionality.

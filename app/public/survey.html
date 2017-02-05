@@ -6,10 +6,8 @@
 
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
+ 
+  <script src="https://code.jquery.com/jquery.js"></script>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <!-- Font Awesome Stylesheet -->
@@ -33,7 +31,7 @@
     <div class="row">
       <div class="col-lg-12">
 
-       <h2>Survey Questions</h2>
+    
     <hr>
 
     <h3><strong>About You</strong></h3>
@@ -138,7 +136,7 @@
         </select>
 
     <h3><strong>Question 9</strong></h3>
-    <h4>You have already earned, or on your way to an advanced post-graduation degree</h4>
+    <h4>You have already earned, or in route to an advanced post-graduation degree</h4>
     <select data-placeholder="" class="chosen-select" id="q9">
       <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -149,7 +147,7 @@
         </select>
 
     <h3><strong>Question 10</strong></h3>
-    <h4>You are or have been involved with a collection of bad influences, but your have at least one good relative to help you.</h4>
+    <h4>You are, or have been involved with a collection of bad influences, but your have at least one good relative to help you.</h4>
     <select data-placeholder="" class="chosen-select" id="q10">
       <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -189,20 +187,20 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title"><strong>Best Match</strong></h2>
+          <h2 class="modal-title"><strong>Best Friend</strong></h2>
         </div>
         <div class="modal-body">
           <h2 id="#friendName"></h2>
-          <img id="#photoLink" src="#" alt="">
+          <img id="#friendImg" src="#" alt="">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
 
     </div>
   </div>
 
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
 
 
@@ -214,8 +212,10 @@
     //verify the form
     //Checks if the user entered any information into the form
     // Check and Capture the form inputs 
-    $("#submit").on("click", function(){
+    $('#submit').on('click', function(){
 
+        
+        
         function checkForm(){
           
           var formChecked = true;  
@@ -254,14 +254,41 @@
           //AJAX post the data to Best Friends API  
           console.log("right before ajax");
           
-          $.ajax({
-            type: "POST",
-            url: currentURL + "/api/users",
-            data: newUser,
-            success: alert("ajax post successful!"),
-            dataType: String
+          
+          $.post(currentURL+"/api/users", newUser,function(){
+              
+
+              console.log("You have been added to the database.");
+
+              
+              
+              
+          })
+          .done(function(data){
+            alert("goodie");
+            $("#friendName").text(data.friendName);
+              
+
+              $('#friendImg').attr("src", data.photoLink);
+              $("#friendImg").attr("width", '100%');
+              $("#friendImg").attr("height", '100%');
+              // Show the modal with the best match 
+              $("#resultsModal").modal('toggle');
+
+
+
+
+          })
+          .fail(function(err){
+            alert("you done fucked up");
+          })
+          .always(function(){
+            alert("always");
           });
-                    
+        
+        
+
+
         }
           else{
 
