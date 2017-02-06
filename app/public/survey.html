@@ -21,13 +21,7 @@
       <h1 class="text-center">The Freshest Survey in Town </h1>
       
       <br>
-    <!--
-      <div class="text-center">
-        <a href="/tables"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
-        <a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
-      </div>
-    </div>
-   -->
+  
     <div class="row">
       <div class="col-lg-12">
 
@@ -46,15 +40,15 @@
     <h4>How fresh are you? Don't lie!</h4>
     <select data-placeholder="" class="chosen-select" id="q1">
       <option value=""></option>
-            <option value="1">1 (Barely)</option>
+            <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-            <option value="5">5 (Super)</option>
+            <option value="5">5 (Freshest)</option>
         </select>
 
     <h3><strong>Question 2</strong></h3>
-    <h4>Would you consider youself a self-centered person?</h4>
+    <h4>You consider youself a self-centered person.</h4>
     <select data-placeholder="" class="chosen-select" id="q2">
       <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -90,7 +84,7 @@
 
 
     <h3><strong>Question 5</strong></h3>
-    <h4>Your viewpoints lean more conservative in political discussions.</h4>
+    <h4>Your viewpoints lean conservatively in political discussions.</h4>
     <select data-placeholder="" class="chosen-select" id="q5">
       <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -102,7 +96,7 @@
 
 
     <h3><strong>Question 6</strong></h3>
-    <h4>You have a hilariously short temper and diabolical plans.</h4>
+    <h4>You have a short temper and diabolical plans.</h4>
     <select data-placeholder="" class="chosen-select" id="q6">
       <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -147,7 +141,7 @@
         </select>
 
     <h3><strong>Question 10</strong></h3>
-    <h4>You are, or have been involved with a collection of bad influences, but your have at least one good relative to help you.</h4>
+    <h4>You are, or have been involved with a collection of bad influences, but you have at least one good relative to help you out.</h4>
     <select data-placeholder="" class="chosen-select" id="q10">
       <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -187,7 +181,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title"><strong>Best Friend</strong></h2>
+        <h2 class="modal-title"><strong>Your Best Friend of Bel-Air</strong></h2>
         </div>
         <div class="modal-body">
           <h2 id="friendName"></h2>
@@ -198,11 +192,7 @@
       </div>
 
     </div>
-</div>
-
-
-
-
+  </div>
 
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
@@ -212,13 +202,8 @@
     //Checks if the user entered any information into the form
     // Check and Capture the form inputs 
     $('#submit').on('click', function(){
-
-        
-        
         function checkForm(){
-          
           var formChecked = true;  
-            
             $('.form-control').each(function(){ 
                 if($(this).val() === "")
                     formChecked = false;
@@ -228,13 +213,9 @@
               if($(this).val() === "")
                 formChecked = false;  
               }); 
-            
               return formChecked;
-            
-          } 
-          
-          
-          //If the user filled in every field from 'form-control' to 'chosen-select' then we proceed to make the user object
+            } 
+           //If the user filled in every field from 'form-control' to 'chosen-select' then we proceed to make the user object
           if(checkForm() == true){  
             
 
@@ -259,8 +240,6 @@
               
               console.log("Success!");
 
-          
-
           }).done(function(data){
               console.log(data.friendName);
               console.log(data.photoLink);
@@ -276,27 +255,15 @@
           }).fail(function(err){
             alert("Check your api routes");
           }).always(function(){
-            alert("always");
+            console.log("always");
           });
 
-      
-  
-      }
-      
+        }
       else{
-
-              alert("Complete the survey player!");
-
-          }
-      
-          return false;
-
-          
-      
-      });
-
-   
-
+            alert("Complete the survey player!");
+      }
+        return false;
+    });
   </script>
 
 </body>

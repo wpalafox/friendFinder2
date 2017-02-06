@@ -18,18 +18,12 @@ module.exports = function(app) {
   // In each of the below cases when a user visits a link
   // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
   // ---------------------------------------------------------------------------
-
-
 //When the user navigate to /api/users it will responed with the json userdata 
   app.get("/api/users", function(req, res) {
-    
-    res.json(userData);
-  
+      res.json(userData);
   });
 
- 
-
-  //API post request to submit data user-data.js
+//API post request to submit data user-data.js
   app.post("/api/users", function(req, res){
 
         console.log("here");
@@ -39,20 +33,13 @@ module.exports = function(app) {
             for(i = 0; i < userData.length; i++){ 
               var sum = 0;
               for(k = 0; k < 10; k++){
-                
                 sum += Math.abs(parseInt(req.body.scores[k])-parseInt(userData[i].scores[k]));
-
               } 
               differenceArray.push(parseInt(sum));
-
-              
-            }
+          }
          console.log(differenceArray);
-         
          var minDif = Math.min.apply(null, differenceArray);
-         
          var theSelection = differenceArray.indexOf(minDif);
-         
          console.log(userData[theSelection]);
          
          res.json(userData[theSelection]);
