@@ -1,12 +1,17 @@
 {
-  "name": "hotrestaurant",
+  "name": "freshFriendFinder",
   "version": "1.0.1",
-  "description": "",
+  "description": "Based on the popular television show 'Fresh Prince of Bel-Aire', this web application determines the user's best match.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
+  "keywords": [
+    "friendFinder",
+    "heroku"
+
+  ],
   
   "author": "William Palafox",
   "license": "ISC",
@@ -16,6 +21,6 @@
   },
   
   "engines": {
-    "node": "5.3.0"
+    "node": "6.9.2"
   }
 }
