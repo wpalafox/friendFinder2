@@ -7,4 +7,4 @@ Checkout the game here: https://still-stream-32062.herokuapp.com/
 1. HTML/CSS
 2. Bootstrap
 3. Javascript 
-4. Ajax requests
+4. AJAX requests
